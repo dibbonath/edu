@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU Faculty Search</title>
+  <link rel="icon" href="D:\Downloads\EDUlogo.png" type="image/x-icon">
+</head>
+<body>
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbx1bP-5ucDOhM-_vZ840sJxQlhcEz_nsmP9WWMe7hzqRiaTuwf3R4PhjUY8-L-0K0-A0w/exec"
+    width="100%"
+    height="100%"
+    allowfullscreen="true"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+  </iframe>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var iframe = document.querySelector('iframe');
+      iframe.addEventListener('load', function() {
+        iframe.contentWindow.document.body.style.overflow = 'hidden';
+      });
+    
+      iframe.requestFullscreen().catch((err) => {
+        console.error('Error attempting to enable full-screen mode:', err.message);
+      });
+    });
+  </script>
+</body>
+</html>
