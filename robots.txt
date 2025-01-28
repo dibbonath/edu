@@ -1,0 +1,19 @@
+# Block admin and login pages
+User-agent: *
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /login/
+
+# Block search results and session pages (if applicable)
+Disallow: /search/
+Disallow: /?sessionid=
+
+# Allow important pages to be crawled
+Allow: /about-us/
+Allow: /services/
+Allow: /blog/
+Allow: /contact/
+
+# Specify location of the XML sitemap
+Sitemap: https://edufaculty.netlify.app/sitemap.xml
