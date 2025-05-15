@@ -6,39 +6,43 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-app.use("*", (req, res) => {
-  res.status(404).send("Not Found");
-});
-
 app.get("/api/faculty", async (req, res) => {
   try {
     const url = "https://www.eastdelta.edu.bd/faculty-members/school-of-science-engineering-technology";
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
+
     const faculty = [];
 
-    // Loop through all faculty containers with the class oKdM2c
-    $(".oKdM2c").each((i, el) => {
-      // Extract the faculty name (inside <h2> tag with span class C9DxTc)
-      const name = $(el).find("h2 span.C9DxTc").text().trim();
+    // Loop through each profile block
+    $("div.t3iYD").each((i, el) => {
+      const photo = $(el).find("img").attr("src") || "";
 
-      // Extract the faculty role (inside <p> tag with span class C9DxTc)
-      const role = $(el).find("p span.C9DxTc").text().trim();
+      const nameElem = $(el).closest(".hJDwNd-AhqUyc-II5mzb")
+        .find("h2 span.C9DxTc")
+        .first()
+        .text()
+        .trim();
 
-      // Extract the faculty photo (from <img> tag)
-      const photo = $(el).find("img").attr("src");
+      const roleElem = $(el).closest(".hJDwNd-AhqUyc-II5mzb")
+        .find("p span.C9DxTc")
+        .first()
+        .text()
+        .trim();
 
-      // Only add data if all necessary elements are found
-      if (name && role && photo) {
-        faculty.push({ name, role, photo });
+      if (nameElem && roleElem && photo) {
+        faculty.push({
+          name: nameElem,
+          role: roleElem,
+          photo,
+        });
       }
     });
 
-    // Send the scraped data as a JSON response
     res.json(faculty);
   } catch (err) {
     console.error("Scrape failed:", err.message);
-    res.status(500).json({ error: "Failed to scrape" });
+    res.status(500).json({ error: "Failed to scrape faculty members." });
   }
 });
 
