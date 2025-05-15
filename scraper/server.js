@@ -6,6 +6,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+app.use("*", (req, res) => {
+  res.status(404).send("Not Found");
+});
+
 app.get("/api/faculty", async (req, res) => {
   try {
     const url = "https://www.eastdelta.edu.bd/faculty-members/school-of-science-engineering-technology";
