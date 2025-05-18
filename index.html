@@ -80,10 +80,10 @@
         <h2>Find Faculty Members at East Delta University</h2>
         <p>EduFaculty is your go-to platform to search for faculty members at East Delta University...</p>
         <header>
-          <nav>
+         <nav>
             <ul>
               <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
-              <li><a href="/gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
+              <li><a href="/calculate-gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
               <li><a href="/clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
               <li><a href="/contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
             </ul>
@@ -101,6 +101,44 @@
   </iframe>
 
   <script>
+    const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
+  
+    const iframe = document.getElementById('appFrame');
+
+    function loadPage(page) {
+      iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+    }
+  
+    document.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // 
+  
+        const href = link.getAttribute('href');
+        const page = href.split('/').pop(); // 
+  
+        history.pushState({ page }, '', href);
+  
+        loadPage(page);
+      });
+    });
+  
+    // Load the default page (Home) on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadPage('index'); // Default page
+    });
+  
+    // Handle browser back/forward navigation
+    window.addEventListener('popstate', (event) => {
+      if (event.state && event.state.page) {
+        loadPage(event.state.page);
+      }
+    });
+  </script>
+
+
+  
+
+<!--   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var iframe = document.querySelector('iframe');
       iframe.addEventListener('load', function() {
@@ -111,6 +149,6 @@
         console.error('Error attempting to enable full-screen mode:', err.message);
       });
     });
-  </script>
+  </script> -->
 </body>
 </html>
