@@ -33,62 +33,217 @@
       }
     }
   </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" nonce="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
 
   <style>
+   * {
+        text-decoration: none;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        outline: none;
+      }
+    
     body {
       margin: 0;
       padding: 0;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #f4f4f4;
-      z-index: 1000;
-      padding: 10px 0;
-    }
+    /* Nav Bar */
+      
+      section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+        display: table;
+        position: relative;
+      }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
+      header {
+        width: 100%;
+        display: table;
+        background-color: #6a0032;        
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+      }
+      #logo {
+        float: left;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 600;
+        padding: 20px 0px;
+      }
+      nav {
+        width: auto;
+        float: right;
+      }
+      nav ul {
+        display: table;
+        float: right;
+      }
+      nav ul li {
+        float: left;
+      }
+      nav ul li:last-child {
+        padding-right: 0px;
+      }
+      nav ul li a {
+        color: #fff;
+        font-size: 18px;
+        padding: 25px 20px;
+        display: inline-block;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a:hover {
+        background-color: #8a1e4a; //002e5b;
+        color: #fde428;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a:hover i {
+        color: #ffca28; //fde428;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a i {
+        padding-right: 10px;
+        color: #fff; //002e5b;
+        transition: all 0.5s ease 0s;
+      }
 
-    nav ul li {
-      margin: 0 15px;
-    }
+      .toggle-menu ul {
+        display: table;
+        width: 25px;
+      }
+      .toggle-menu ul li {
+        width: 100%;
+        height: 3px;
+        background-color: #002e5b;
+        margin-bottom: 4px;
+      }
+      .toggle-menu ul li:last-child {
+        margin-bottom: 0px;
+      }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      header input[type="checkbox"], 
+      header label.toggle-menu {
+        display: none;
+      }
+
+    @media only screen and (max-width: 1440px) {
+        section {
+          max-width: 95%;
+        }
+      }
+    @media only screen and (max-width: 980px) {
+        header {
+          padding: 13px 0px;
+        }
+        #logo {
+          padding: 8px;
+        }
+        header input[type="checkbox"] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+          background: none;
+        }
+        header input[type="checkbox"]:fous {
+          background: none;
+        }
+        header label.toggle-menu {
+          float: right;
+          padding: 14px 0px;
+          display: inline-block;
+          cursor: pointer;
+        }
+        header input[type="checkbox"]:checked ~ nav {
+          display: block;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          right: 0px;
+          top: 58px;
+          background-color: #002e5b;
+          padding: 0px;
+          z-index: 99;
+        }
+        nav ul {
+          width: auto;
+        }
+        nav ul li {
+          float: none;
+          padding: 0px;
+          width: 100%;
+          display: table;
+        }
+        nav ul li a {
+          color: #fff;
+          font-size: 15px;
+          padding: 10px 20px;
+          display: block;
+          border-bottom: 1px solid rgba(225, 225, 225, 0.1);
+        }
+        nav ul li a i {
+          color: #fde428;
+          padding-right: 13px;
+        }      
+      }
+    
+    @media only screen and (max-width: 600px) {
+       
+        label.toggle-menu {
+          text-align: center;
+          display: block;
+        }
     }
+    @media only screen and (max-width: 360px) {
+      header label.toggle-menu {
+          padding: 5px 0px;
+        }
+        #logo {
+          font-size: 20px;
+        }
+        nav {
+          top: 52px;
+        }
+      }
 
     iframe {
       position: fixed;
-      top: 60px; /* adjust if your navbar height changes */
       left: 0;
       width: 100%;
-      height: calc(100% - 60px);
+      height: 100%;
       border: none;
     }
   </style>
+  
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="/" data-page="index"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="/calculate-gpa" data-page="gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
-      <li><a href="/clubs" data-page="clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
-      <li><a href="/contact" data-page="contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+      <section>
+        <a href="https://eastdeltafaculty.netlify.app/" id="logo" target="_blank">East Delta Faculty</a>
+
+        <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
+        <input type="checkbox" id="toggle-1">
+         <!-- Navigation Bar -->
+        <nav>
+          <ul>
+            <li><a href="/" data-page="index"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="/calculate-gpa" data-page="gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
+            <li><a href="/clubs" data-page="clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
+            <li><a href="/contact" data-page="contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+ 
 
   <!-- Iframe -->
   <iframe id="appFrame"></iframe>
