@@ -90,47 +90,50 @@
         <p>For more information about East Delta University, visit their <a href="https://www.eastdelta.edu.bd" target="_blank" rel="noopener noreferrer">official website</a>.</p>
       </div>
 
-  <iframe id="appFrame" 
-    src="https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec?page=index"
-    width="100%"
-    height="100%"
-    allowfullscreen="true"
+  <iframe 
+    id="appFrame"
+    width="100%" 
+    height="100%" 
+    frameborder="0"
     style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
   </iframe>
 
   <script>
     const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
-  
     const iframe = document.getElementById('appFrame');
 
-    function loadPage(page) {
-      iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+    function getPageFromPath(path) {
+      if (path === '/' || path === '') return 'index';
+      if (path === '/calculate-gpa') return 'gpa';
+      if (path === '/clubs') return 'clubs';
+      if (path === '/contact') return 'contact';
+      return 'index'; // default fallback
     }
-  
-    document.querySelectorAll('a[href]').forEach(link => {
-      link.addEventListener('click', (e) => {
+
+    function loadPage(pageName) {
+      iframe.src = `${BASE_SCRIPT_URL}?page=${pageName}`;
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('a[data-page]').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-  
-        const href = link.getAttribute('href');
-        const page = href.split('/').pop();
-  
-        // Update the URL without page reload
-        history.pushState({ page }, '', href);
-  
+        const page = link.getAttribute('data-page');
+        history.pushState({page}, '', link.getAttribute('href'));
         loadPage(page);
       });
     });
-  
-    // Load the default page (Home) on page load
+
+    // Handle page load and browser back/forward
     window.addEventListener('DOMContentLoaded', () => {
-      loadPage('index'); // Default page
+      const currentPath = window.location.pathname;
+      const page = getPageFromPath(currentPath);
+      loadPage(page);
     });
-  
-    // Handle browser back/forward navigation
-    window.addEventListener('popstate', (event) => {
-      if (event.state && event.state.page) {
-        loadPage(event.state.page);
-      }
+
+    window.addEventListener('popstate', (e) => {
+      const page = e.state?.page || 'index';
+      loadPage(page);
     });
   </script>
 </body>
