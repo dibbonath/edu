@@ -1,103 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>East Delta University Faculty</title>
   <meta name="description" content="East Delta Faculty lets you easily search and connect with faculty members at East Delta University. Find professors by name or initials quickly.">
-  <meta name="keywords" content="EduFaculty, East Delta Faculty, east delta faculty, eastdeltafaculty, East Delta University, faculty search, find professors, East Delta University faculty, faculty directory, search faculty by name, East Delta professors, EduFaculty platform, faculty search tool, professors at East Delta University, find faculty members, search by initials, East Delta faculty directory">
-  <meta name="robots" content="index, follow"> 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="East Delta Faculty | Edu Faculty | East Delta University Faculty Search">
-  <meta property="og:description" content="EduFaculty lets you easily search and connect with faculty members at East Delta University. Find professors by name or initials quickly.">
+  <meta name="keywords" content="EduFaculty, East Delta Faculty, East Delta University, faculty search, faculty directory, professors">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="East Delta Faculty | East Delta University Faculty Search">
+  <meta property="og:description" content="Search for faculty members at East Delta University using EduFaculty.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.eastdeltafaculty.netlify.app/images/og-image.jpg">
   <meta property="og:url" content="https://www.eastdeltafaculty.netlify.app/">
-  <meta property="og:site_name" content="East Delta Faculty">
-  <meta name="msvalidate.01" content="C66963BB5A63E216FEDDB2B7244D3F1E" />
   
-  <link rel="canonical" href="https://www.eastdeltafaculty.netlify.app/">
+  <link rel="canonical" href="https://www.eastdeltafaculty.netlify.app/" />
   <link rel="icon" href="images/EDUlogo.png" type="image/x-icon">
-  <link rel="alternate" href="https://eastdeltafaculty.netlify.app/" hreflang="en">
+  
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://eastdeltafaculty.netlify.app",
-        "name": "East Delta Faculty",
-        "description": "EduFaculty helps students easily find faculty members at East Delta University. Search by faculty initials or department for quick access to faculty profiles.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://eastdeltafaculty.netlify.app/?search={search_term}",
-          "query-input": "required name=search_term"
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://eastdeltafaculty.netlify.app",
+      "name": "East Delta Faculty",
+      "description": "Search East Delta University faculty by name or department.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://eastdeltafaculty.netlify.app/?search={search_term}",
+        "query-input": "required name=search_term"
       }
-
-      {
-        "@context": "https://schema.org",
-        "@type": "CollegeOrUniversity",
-        "name": "East Delta University",
-        "url": "https://www.eastdelta.edu.bd",
-        "logo": "https://www.eastdelta.edu.bd/logo.png",
-        "sameAs": [
-          "https://www.facebook.com/eastdeltauniversity1",
-          "https://www.linkedin.com/school/eastdeltauniversity/",
-          "https://www.instagram.com/eastdeltauniversity/",
-          "https://www.youtube.com/c/EastDeltaUniversity1"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Abdullah Al Noman Road, Noman Society, East Nasirabad, Khulshi, Chattogram ",
-          "addressLocality": "Chattogram",
-          "addressRegion": "Chattogram Division",
-          "postalCode": "4209",
-          "addressCountry": "BD"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+88 01311104531, +88 01311104532, +88 01311104534, +88 01311104537, +88 09638144413",
-          "contactType": "customer service",
-          "areaServed": "BD",
-          "availableLanguage": "English, Bangla"
-        }
-      }
+    }
   </script>
 
   <style>
-    .seo-heading {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #f4f4f4;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    iframe {
+      position: fixed;
+      top: 60px; /* adjust if your navbar height changes */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 60px);
+      border: none;
     }
   </style>
 </head>
 <body>
-    <div class="seo-heading">
-        <h1>East Delta Faculty. Welcome to EduFaculty</h1>
-        <h2>Faculty Search</h2>
-        <h2>Find Faculty Members at East Delta University</h2>
-        <p>EduFaculty is your go-to platform to search for faculty members at East Delta University...</p>
-        <header>
-          <nav>
-            <ul>
-              <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
-              <li><a href="/calculate-gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
-              <li><a href="/clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
-              <li><a href="/contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-        <p>For more information about East Delta University, visit their <a href="https://www.eastdelta.edu.bd" target="_blank" rel="noopener noreferrer">official website</a>.</p>
-      </div>
 
-  <iframe 
-    id="appFrame"
-    width="100%" 
-    height="100%" 
-    frameborder="0"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-  </iframe>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="/" data-page="index"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="/calculate-gpa" data-page="gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
+      <li><a href="/clubs" data-page="clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
+      <li><a href="/contact" data-page="contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Iframe -->
+  <iframe id="appFrame"></iframe>
+
+  <!-- Script to handle page loading -->
   <script>
     const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
     const iframe = document.getElementById('appFrame');
@@ -107,32 +103,34 @@
       if (path === '/calculate-gpa') return 'gpa';
       if (path === '/clubs') return 'clubs';
       if (path === '/contact') return 'contact';
-      return 'index'; // default fallback
+      return 'index'; // default
     }
 
-    function loadPage(pageName) {
-      iframe.src = `${BASE_SCRIPT_URL}?page=${pageName}`;
+    function loadPage(page) {
+      iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
     }
 
-    // Handle navigation clicks
+    // Handle nav click
     document.querySelectorAll('a[data-page]').forEach(link => {
-      link.addEventListener('click', e => {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
-        const page = link.getAttribute('data-page');
-        history.pushState({page}, '', link.getAttribute('href'));
+        const page = this.getAttribute('data-page');
+        const href = this.getAttribute('href');
+        history.pushState({ page }, '', href);
         loadPage(page);
       });
     });
 
-    // Handle page load and browser back/forward
+    // On first load
     window.addEventListener('DOMContentLoaded', () => {
       const currentPath = window.location.pathname;
       const page = getPageFromPath(currentPath);
       loadPage(page);
     });
 
-    window.addEventListener('popstate', (e) => {
-      const page = e.state?.page || 'index';
+    // Handle browser back/forward
+    window.addEventListener('popstate', (event) => {
+      const page = event.state?.page || 'index';
       loadPage(page);
     });
   </script>
