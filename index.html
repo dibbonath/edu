@@ -33,34 +33,34 @@
         }
       }
 
-        {
-          "@context": "https://schema.org",
-          "@type": "CollegeOrUniversity",
-          "name": "East Delta University",
-          "url": "https://www.eastdelta.edu.bd",
-          "logo": "https://www.eastdelta.edu.bd/logo.png",  // University Logo (Optional)
-          "sameAs": [
-            "https://www.facebook.com/eastdeltauniversity1",  // Social Media Profiles (Optional)
-            "https://www.linkedin.com/school/eastdeltauniversity/"
-            "https://www.instagram.com/eastdeltauniversity/"
-            "https://www.youtube.com/c/EastDeltaUniversity1"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Abdullah Al Noman Road, Noman Society, East Nasirabad, Khulshi, Chattogram ",
-            "addressLocality": "Chattogram",
-            "addressRegion": "Chattogram Division",
-            "postalCode": "4209",
-            "addressCountry": "BD"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+88 01311104531, +88 01311104532, +88 01311104534, +88 01311104537, +88 09638144413",
-            "contactType": "customer service",
-            "areaServed": "BD",
-            "availableLanguage": "English, Bangla"
-          }
+      {
+        "@context": "https://schema.org",
+        "@type": "CollegeOrUniversity",
+        "name": "East Delta University",
+        "url": "https://www.eastdelta.edu.bd",
+        "logo": "https://www.eastdelta.edu.bd/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/eastdeltauniversity1",
+          "https://www.linkedin.com/school/eastdeltauniversity/",
+          "https://www.instagram.com/eastdeltauniversity/",
+          "https://www.youtube.com/c/EastDeltaUniversity1"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Abdullah Al Noman Road, Noman Society, East Nasirabad, Khulshi, Chattogram ",
+          "addressLocality": "Chattogram",
+          "addressRegion": "Chattogram Division",
+          "postalCode": "4209",
+          "addressCountry": "BD"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+88 01311104531, +88 01311104532, +88 01311104534, +88 01311104537, +88 09638144413",
+          "contactType": "customer service",
+          "areaServed": "BD",
+          "availableLanguage": "English, Bangla"
         }
+      }
   </script>
 
   <style>
@@ -69,9 +69,7 @@
       left: -9999px;
       top: -9999px;
     }
-
   </style>
-  
 </head>
 <body>
     <div class="seo-heading">
@@ -80,7 +78,7 @@
         <h2>Find Faculty Members at East Delta University</h2>
         <p>EduFaculty is your go-to platform to search for faculty members at East Delta University...</p>
         <header>
-         <nav>
+          <nav>
             <ul>
               <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
               <li><a href="/calculate-gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
@@ -91,8 +89,8 @@
         </header>
         <p>For more information about East Delta University, visit their <a href="https://www.eastdelta.edu.bd" target="_blank" rel="noopener noreferrer">official website</a>.</p>
       </div>
-  
-  <iframe 
+
+  <iframe id="appFrame" 
     src="https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec?page=index"
     width="100%"
     height="100%"
@@ -111,11 +109,12 @@
   
     document.querySelectorAll('a[href]').forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); // 
+        e.preventDefault();
   
         const href = link.getAttribute('href');
-        const page = href.split('/').pop(); // 
+        const page = href.split('/').pop();
   
+        // Update the URL without page reload
         history.pushState({ page }, '', href);
   
         loadPage(page);
@@ -134,9 +133,9 @@
       }
     });
   </script>
+</body>
+</html>
 
-
-  
 
 <!--   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -150,5 +149,3 @@
       });
     });
   </script> -->
-</body>
-</html>
