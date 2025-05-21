@@ -270,8 +270,34 @@
       return 'index'; // default
     }
 
+    function updateTitleAndMeta(page) {
+      let title = 'East Delta University Faculty';
+      let description = 'Search East Delta University faculty members.';
+    
+      if (page === 'gpa') {
+        title = 'GPA Calculator | East Delta University';
+        description = 'Calculate your GPA easily with our GPA Calculator for East Delta University students.';
+      } else if (page === 'clubs') {
+        title = 'Student Clubs | East Delta University';
+        description = 'Discover all the student clubs and co-curricular activities at EDU.';
+      } else if (page === 'contact') {
+        title = 'Contact Us | East Delta University Faculty';
+        description = 'Reach out to the faculty and administration of East Delta University.';
+      }
+    
+      document.title = title;
+    
+      // Update meta description
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', description);
+      }
+    }
+
+
     function loadPage(page) {
       iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+      updateTitleAndMeta(page);
     }
 
     // Handle nav click
