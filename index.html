@@ -7,17 +7,17 @@
   <meta name="description" content="East Delta Faculty lets you easily search and connect with faculty members at East Delta University FULL TIME FACULTY MEMBERS. Find professors by name or initials quickly.">
   <meta name="keywords" content="EduFaculty, East Delta Faculty, East Delta University, faculty search, east delta university faculty, edu professors, east delta access academy, east delta soset faculty, east delta sob faculty, east delta solass faculty, east delta decon faculty, east delta university faculty memebers">
   <meta name="robots" content="index, follow">
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="East Delta Faculty | East Delta University Faculty Search">
   <meta property="og:description" content="Search for faculty members at East Delta University using EduFaculty.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.eastdeltafaculty.netlify.app/images/og-image.jpg">
   <meta property="og:url" content="https://www.eastdeltafaculty.netlify.app/">
-  
+
   <link rel="canonical" href="https://www.eastdeltafaculty.netlify.app/" />
   <link rel="icon" href="images/EDUlogo.png" type="image/x-icon">
-  
+
   <!-- JSON-LD Schema -->
   <script type="application/ld+json">
     {
@@ -33,310 +33,271 @@
       }
     }
   </script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" nonce="">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <style>
-   * {
-        text-decoration: none;
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-        outline: none;
-      }
-    
-    body {
+    * {
+      text-decoration: none;
+      list-style: none;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Nav Bar */
-      
-      section {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0px auto;
-        display: table;
-        position: relative;
-      }
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-      header {
-        width: 100%;
-        display: table;
-        background-color: #6a0032;        
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 999;
-      }
-      #logo {
-        float: left;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #fff;
-        font-weight: 600;
-        padding: 20px 0px;
-      }
-      nav {
-        width: auto;
-        float: right;
-      }
-      nav ul {
-        display: table;
-        float: right;
-      }
-      nav ul li {
-        float: left;
-      }
-      nav ul li:last-child {
-        padding-right: 0px;
-      }
-      nav ul li a {
-        color: #fff;
-        font-size: 18px;
-        padding: 25px 20px;
+    section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: table;
+    }
+
+    header {
+      background-color: #6a0032;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    #logo {
+      float: left;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600;
+      padding: 20px;
+    }
+
+    nav {
+      float: right;
+    }
+
+    nav ul {
+      display: table;
+      float: right;
+    }
+
+    nav ul li {
+      float: left;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-size: 18px;
+      padding: 25px 20px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #8a1e4a;
+      color: #fde428;
+    }
+
+    nav ul li a i {
+      margin-right: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-menu ul {
+      display: table;
+      width: 25px;
+    }
+
+    .toggle-menu ul li {
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 4px;
+    }
+
+    header input[type="checkbox"],
+    header label.toggle-menu {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      header label.toggle-menu {
         display: inline-block;
-        transition: all 0.5s ease 0s;
-      }
-      nav ul li a:hover {
-        background-color: #8a1e4a; //002e5b;
-        color: #fde428;
-        transition: all 0.5s ease 0s;
-      }
-      nav ul li a:hover i {
-        color: #ffca28; //fde428;
-        transition: all 0.5s ease 0s;
-      }
-      nav ul li a i {
-        padding-right: 10px;
-        color: #fff; //002e5b;
-        transition: all 0.5s ease 0s;
+        float: right;
+        padding: 20px;
+        cursor: pointer;
       }
 
-      .toggle-menu ul {
-        display: table;
-        width: 25px;
-      }
-      .toggle-menu ul li {
-        width: 100%;
-        height: 3px;
-        background-color: #002e5b;
-        margin-bottom: 4px;
-      }
-      .toggle-menu ul li:last-child {
-        margin-bottom: 0px;
+      header input[type="checkbox"]:checked ~ nav {
+        display: block;
       }
 
-      header input[type="checkbox"], 
-      header label.toggle-menu {
+      nav {
         display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #002e5b;
+        width: 100%;
       }
 
-    @media only screen and (max-width: 1440px) {
-        section {
-          max-width: 95%;
-        }
+      nav ul {
+        float: none;
+        width: 100%;
       }
-    @media only screen and (max-width: 980px) {
-        header {
-          padding: 13px 0px;
-        }
-        #logo {
-          padding: 8px;
-        }
-        header input[type="checkbox"] {
-          position: absolute;
-          top: -9999px;
-          left: -9999px;
-          background: none;
-        }
-        header input[type="checkbox"]:fous {
-          background: none;
-        }
-        header label.toggle-menu {
-          float: right;
-          padding: 14px 0px;
-          display: inline-block;
-          cursor: pointer;
-        }
-        header input[type="checkbox"]:checked ~ nav {
-          display: block;
-        }
 
-        nav {
-          display: none;
-          position: absolute;
-          right: 0px;
-          top: 58px;
-          background-color: #002e5b;
-          padding: 0px;
-          z-index: 99;
-        }
-        nav ul {
-          width: auto;
-        }
-        nav ul li {
-          float: none;
-          padding: 0px;
-          width: 100%;
-          display: table;
-        }
-        nav ul li a {
-          color: #fff;
-          font-size: 15px;
-          padding: 10px 20px;
-          display: block;
-          border-bottom: 1px solid rgba(225, 225, 225, 0.1);
-        }
-        nav ul li a i {
-          color: #fde428;
-          padding-right: 13px;
-        }      
+      nav ul li {
+        float: none;
+        width: 100%;
       }
-    
-    @media only screen and (max-width: 600px) {
-       
-        label.toggle-menu {
-          text-align: center;
-          display: block;
-        }
+
+      nav ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
     }
-    @media only screen and (max-width: 360px) {
-      header label.toggle-menu {
-          padding: 5px 0px;
-        }
-        #logo {
-          font-size: 20px;
-        }
-        nav {
-          top: 52px;
-        }
-      }
+
+    #loading {
+      position: fixed;
+      top: 260px;
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      font-size: 18px;
+      color: #555;
+    }
 
     iframe {
       position: fixed;
+      top: 60px;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 60px);
       border: none;
+      display: none;
     }
   </style>
-  
 </head>
+
 <body>
 
-<h1 style = "display: none;"> FULL TIME FACULTY MEMBERS </h1>
-<h2 style = "display: none;"> East Delta Faculty Members</h2>
-<div class="faculty" style= "display: none;">
-  <div><h2> <a href="/"> SCHOOL OF SCIENCE ENGINEERING & TECHNOLOGY </a> </h2></div>
-  <div><h2> <a href="/"> SCHOOL OF BUSINESS ADMINISTRATION </a> </h2></div>
-  <div><h2> <a href="/"> SCHOOL OF LIBERAL ARTS & SOCIAL SCIENCE </a> </h2></div>
-</div>
-  
+<header>
+  <section>
+    <a href="/" id="logo">East Delta Faculty</a>
+    <label for="toggle-1" class="toggle-menu"><ul><li></li><li></li><li></li></ul></label>
+    <input type="checkbox" id="toggle-1" />
+    <nav>
+      <ul>
+        <li><a href="/" data-page="index"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/calculate-gpa" data-page="gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
+        <li><a href="/clubs" data-page="clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
+        <li><a href="/contact" data-page="contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
 
-  <header>
-      <section>
-        <a href="https://eastdeltafaculty.netlify.app/" id="logo" target="_blank">East Delta Faculty</a>
+<div id="loading" class="">
+  <span class="me-3"> Loading content... </span> 
+  <div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
+<iframe id="appFrame" title="East Delta University Faculty Content"></iframe>
 
-        <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
-        <input type="checkbox" id="toggle-1">
-         <!-- Navigation Bar -->
-        <nav>
-          <ul>
-            <li><a href="/" data-page="index"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="/calculate-gpa" data-page="gpa"><i class="fa-solid fa-calculator"></i> Calculate GPA</a></li>
-            <li><a href="/clubs" data-page="clubs"><i class="fa-solid fa-handshake"></i> Clubs</a></li>
-            <li><a href="/contact" data-page="contact"><i class="fa-solid fa-phone"></i> Contact</a></li>
-          </ul>
-        </nav>
-      </section>
-    </header>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
+  const iframe = document.getElementById('appFrame');
+  const loading = document.getElementById('loading');
 
- 
+  function getPageFromPath(path) {
+    const map = {
+      '/': 'index',
+      '/calculate-gpa': 'gpa',
+      '/clubs': 'clubs',
+      '/contact': 'contact'
+    };
+    return map[path] || 'index';
+  }
 
-  <!-- Iframe -->
-  <iframe id="appFrame"></iframe>
-
-  <!-- Script to handle page loading -->
-  <script>
-    const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
-    const iframe = document.getElementById('appFrame');
-
-    function getPageFromPath(path) {
-      if (path === '/' || path === '') return 'index';
-      if (path === '/calculate-gpa') return 'gpa';
-      if (path === '/clubs') return 'clubs';
-      if (path === '/contact') return 'contact';
-      return 'index'; // default
+  function updateTitleAndMeta(page) {
+    let title = 'East Delta University Faculty';
+    let description = 'Search East Delta University faculty members.';
+    if (page === 'gpa') {
+      title = 'GPA Calculator | East Delta University';
+      description = 'Calculate your GPA easily with our GPA Calculator for East Delta University students.';
+    } else if (page === 'clubs') {
+      title = 'Student Clubs | East Delta University';
+      description = 'Discover all the student clubs and co-curricular activities at EDU.';
+    } else if (page === 'contact') {
+      title = 'Contact Us | East Delta University Faculty';
+      description = 'Reach out to the faculty and administration of East Delta University.';
     }
+    document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', description);
+  }
 
-    function updateTitleAndMeta(page) {
-      let title = 'East Delta University Faculty';
-      let description = 'Search East Delta University faculty members.';
-    
-      if (page === 'gpa') {
-        title = 'GPA Calculator | East Delta University';
-        description = 'Calculate your GPA easily with our GPA Calculator for East Delta University students.';
-      } else if (page === 'clubs') {
-        title = 'Student Clubs | East Delta University';
-        description = 'Discover all the student clubs and co-curricular activities at EDU.';
-      } else if (page === 'contact') {
-        title = 'Contact Us | East Delta University Faculty';
-        description = 'Reach out to the faculty and administration of East Delta University.';
-      }
-    
-      document.title = title;
-    
-      // Update meta description
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', description);
-      }
-    }
+  function loadPage(page, push = false) {
+    loading.style.display = 'block';
+    iframe.style.display = 'none';
 
-
-    function loadPage(page) {
-      iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+    let cached = sessionStorage.getItem(page);
+    if (cached) {
+      iframe.srcdoc = cached;
+      iframe.style.display = 'block';
+      loading.style.display = 'none';
       updateTitleAndMeta(page);
+      return;
     }
 
-    // Handle nav click
-    document.querySelectorAll('a[data-page]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const page = this.getAttribute('data-page');
-        const href = this.getAttribute('href');
-        history.pushState({ page }, '', href);
-        loadPage(page);
+    iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+    updateTitleAndMeta(page);
+    if (push) {
+      const href = `/${page === 'index' ? '' : page}`;
+      history.pushState({ page }, '', href);
+    }
+  }
+  document.querySelectorAll('a[data-page]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const page = this.getAttribute('data-page');
+      loadPage(page, true);
+    });
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const page = getPageFromPath(path);
+    loadPage(page);
+  });
+
+  window.addEventListener('popstate', (event) => {
+    const page = event.state?.page || getPageFromPath(window.location.pathname);
+    loadPage(page, false);
+  });
+
+  iframe.addEventListener('load', () => {
+    loading.style.display = 'none';
+    iframe.style.display = 'block';
+    const currentPage = getPageFromPath(window.location.pathname);
+    sessionStorage.setItem(currentPage, iframe.contentDocument.documentElement.innerHTML);
+    try {
+      const links = iframe.contentDocument.querySelectorAll('a');
+      links.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
       });
-    });
+    } catch (e) {
+      console.warn("Could not access iframe content for link handling.");
+    }
+  });
+</script>
 
-    // On first load
-    window.addEventListener('DOMContentLoaded', () => {
-      const currentPath = window.location.pathname;
-      const page = getPageFromPath(currentPath);
-      loadPage(page);
-    });
-
-    // Handle browser back/forward
-    window.addEventListener('popstate', (event) => {
-      const page = event.state?.page || 'index';
-      loadPage(page);
-    });
-  </script>
 </body>
 </html>
-
-
-<!--   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var iframe = document.querySelector('iframe');
-      iframe.addEventListener('load', function() {
-        iframe.contentWindow.document.body.style.overflow = 'hidden';
-      });
-    
-      iframe.requestFullscreen().catch((err) => {
-        console.error('Error attempting to enable full-screen mode:', err.message);
-      });
-    });
-  </script> -->
