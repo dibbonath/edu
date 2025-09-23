@@ -222,30 +222,28 @@
       font-size: 18px;
       color: #555;
     }
+  
+    .spinner-border {
+      display: inline-block; 
+      vertical-align: middle;
+      width: 2rem;
+      height: 2rem;
+      border: 0.25em solid #f8f4f6;
+      border-top: 0.25em solid #6a0032; 
+      border-radius: 50%;
+      animation: spinner-border 0.75s linear infinite;
+      margin-left: 1rem;
+    }
     
-    /* Spinner from Bootstrap */
-.spinner-border {
-  display: inline-block; /* Make it visible next to the text */
-  vertical-align: middle;
-  width: 2rem;
-  height: 2rem;
-  border: 0.25em solid #f8f4f6;
-  border-top: 0.25em solid #6a0032; /* EDU brand color maybe */
-  border-radius: 50%;
-  animation: spinner-border 0.75s linear infinite;
-  margin-left: 1rem;
-}
-
-
-@keyframes spinner-border {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    
+    @keyframes spinner-border {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
 
     iframe {
-      position: fixed;
-      top: 60px;
+      position: fixed;     
       left: 0;
       width: 100%;
       height: calc(100% - 60px);
