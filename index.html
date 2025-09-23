@@ -34,7 +34,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -49,118 +49,169 @@
 
     body {
       font-family: Arial, sans-serif;
+      
     }
 
     section {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: table;
-    }
-
-    header {
-      background-color: #6a0032;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-    }
-
-    #logo {
-      float: left;
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #fff;
-      font-weight: 600;
-      padding: 20px;
-    }
-
-    nav {
-      float: right;
-    }
-
-    nav ul {
-      display: table;
-      float: right;
-    }
-
-    nav ul li {
-      float: left;
-    }
-
-    nav ul li a {
-      color: #fff;
-      font-size: 18px;
-      padding: 25px 20px;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      background-color: #8a1e4a;
-      color: #fde428;
-    }
-
-    nav ul li a i {
-      margin-right: 8px;
-      transition: color 0.3s ease;
-    }
-
-    .toggle-menu ul {
-      display: table;
-      width: 25px;
-    }
-
-    .toggle-menu ul li {
-      width: 100%;
-      height: 3px;
-      background-color: #fff;
-      margin-bottom: 4px;
-    }
-
-    header input[type="checkbox"],
-    header label.toggle-menu {
-      display: none;
-    }
-
-    @media (max-width: 980px) {
-      header label.toggle-menu {
-        display: inline-block;
-        float: right;
-        padding: 20px;
-        cursor: pointer;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+        display: table;
+        position: relative;
       }
 
-      header input[type="checkbox"]:checked ~ nav {
-        display: block;
+      header {
+        width: 100%;
+        display: table;
+        background-color: #6a0032;        
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
       }
-
+      #logo {
+        float: left;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 600;
+        padding: 20px 0px;
+      }
       nav {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #002e5b;
-        width: 100%;
+        width: auto;
+        float: right;
       }
-
       nav ul {
-        float: none;
-        width: 100%;
+        display: table;
+        float: right;
       }
-
       nav ul li {
-        float: none;
-        width: 100%;
+        float: left;
+      }
+      nav ul li:last-child {
+        padding-right: 0px;
+      }
+      nav ul li a {
+        color: #fff;
+        font-size: 18px;
+        padding: 25px 20px;
+        display: inline-block;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a:hover {
+        background-color: #8a1e4a; //002e5b;
+        color: #fde428;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a:hover i {
+        color: #ffca28; //fde428;
+        transition: all 0.5s ease 0s;
+      }
+      nav ul li a i {
+        padding-right: 10px;
+        color: #fff; //002e5b;
+        transition: all 0.5s ease 0s;
       }
 
-      nav ul li a {
-        display: block;
-        padding: 15px;
-        font-size: 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+      .toggle-menu ul {
+        display: table;
+        width: 25px;
       }
+      .toggle-menu ul li {
+        width: 100%;
+        height: 3px;
+        background-color: #002e5b;
+        margin-bottom: 4px;
+      }
+      .toggle-menu ul li:last-child {
+        margin-bottom: 0px;
+      }
+
+      header input[type="checkbox"], 
+      header label.toggle-menu {
+        display: none;
+      }
+
+    @media only screen and (max-width: 1440px) {
+        section {
+          max-width: 95%;
+        }
+      }
+    @media only screen and (max-width: 980px) {
+        header {
+          padding: 13px 0px;
+        }
+        #logo {
+          padding: 8px;
+        }
+        header input[type="checkbox"] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+          background: none;
+        }
+        header input[type="checkbox"]:fous {
+          background: none;
+        }
+        header label.toggle-menu {
+          float: right;
+          padding: 14px 0px;
+          display: inline-block;
+          cursor: pointer;
+        }
+        header input[type="checkbox"]:checked ~ nav {
+          display: block;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          right: 0px;
+          top: 58px;
+          background-color: #002e5b;
+          padding: 0px;
+          z-index: 99;
+        }
+        nav ul {
+          width: auto;
+        }
+        nav ul li {
+          float: none;
+          padding: 0px;
+          width: 100%;
+          display: table;
+        }
+        nav ul li a {
+          color: #fff;
+          font-size: 15px;
+          padding: 10px 20px;
+          display: block;
+          border-bottom: 1px solid rgba(225, 225, 225, 0.1);
+        }
+        nav ul li a i {
+          color: #fde428;
+          padding-right: 13px;
+        }      
+      }
+    
+    @media only screen and (max-width: 600px) {
+       
+        label.toggle-menu {
+          text-align: center;
+          display: block;
+        }
     }
+    @media only screen and (max-width: 360px) {
+      header label.toggle-menu {
+          padding: 5px 0px;
+        }
+        #logo {
+          font-size: 20px;
+        }
+        nav {
+          top: 52px;
+        }
+      }
 
     #loading {
       position: fixed;
@@ -171,6 +222,26 @@
       font-size: 18px;
       color: #555;
     }
+    
+    /* Spinner from Bootstrap */
+.spinner-border {
+  display: inline-block; /* Make it visible next to the text */
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  border: 0.25em solid #f8f4f6;
+  border-top: 0.25em solid #6a0032; /* EDU brand color maybe */
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+  margin-left: 1rem;
+}
+
+
+@keyframes spinner-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
     iframe {
       position: fixed;
@@ -203,13 +274,12 @@
 </header>
 
 <div id="loading" class="">
-  <span class="me-3"> Loading content... </span> 
-  <div class="spinner-border" role="status">
+  <span> Loading content... </span> 
+  <div class="spinner-border">
   <span class="sr-only">Loading...</span>
 </div></div>
 <iframe id="appFrame" title="East Delta University Faculty Content"></iframe>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
   const BASE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvbPnIdFLKlXjy_56sp5fqOVnN_Y517RARtuxIiD2iv5DfbIgI1rQds-N9pADqSqr6Vw/exec";
   const iframe = document.getElementById('appFrame');
@@ -243,26 +313,36 @@
     if (metaDesc) metaDesc.setAttribute('content', description);
   }
 
-  function loadPage(page, push = false) {
-    loading.style.display = 'block';
-    iframe.style.display = 'none';
+function loadPage(page, push = false) {
+  loading.style.display = 'block';
+  iframe.style.display = 'none';
 
-    let cached = sessionStorage.getItem(page);
-    if (cached) {
-      iframe.srcdoc = cached;
-      iframe.style.display = 'block';
-      loading.style.display = 'none';
-      updateTitleAndMeta(page);
-      return;
-    }
-
-    iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+  let cached = sessionStorage.getItem(page);
+  if (cached) {
+    iframe.srcdoc = cached;
+    iframe.style.display = 'block';
+    loading.style.display = 'none';
     updateTitleAndMeta(page);
-    if (push) {
+    if (!push) {
       const href = `/${page === 'index' ? '' : page}`;
-      history.pushState({ page }, '', href);
+      history.replaceState({ page }, '', href);
     }
+
+    return;
   }
+
+  iframe.src = `${BASE_SCRIPT_URL}?page=${page}`;
+  updateTitleAndMeta(page);
+
+  if (push) {
+    const href = `/${page === 'index' ? '' : page}`;
+    history.pushState({ page }, '', href);
+  } else {
+    const href = `/${page === 'index' ? '' : page}`;
+    history.replaceState({ page }, '', href);
+  }
+}
+
   document.querySelectorAll('a[data-page]').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
